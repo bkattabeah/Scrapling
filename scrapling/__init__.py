@@ -17,6 +17,13 @@ For async usage:
     >>> import asyncio
     >>> from scrapling import AsyncFetcher
     >>> page = asyncio.run(AsyncFetcher().get('https://example.com'))
+
+Quick reference for element selection:
+    - page.find('css_selector')       -> first matching element
+    - page.find_all('css_selector')   -> all matching elements
+    - page.find('tag', {'attr': 'v'}) -> element with attribute filter
+    - element.text                    -> inner text content
+    - element.attrib['href']          -> attribute value
 """
 
 __version__ = "0.2.9"
@@ -25,6 +32,7 @@ __license__ = "MIT"
 
 # Personal fork: added AsyncFetcher async usage example to docstring
 # and exposed the __author__ and __license__ in __all__ for convenience
+# Also added a quick reference section to the module docstring for easier lookup
 from scrapling.core.page import Adaptor
 from scrapling.fetchers import (
     Fetcher,
